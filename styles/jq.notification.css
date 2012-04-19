@@ -1,0 +1,67 @@
+.notification_bar {
+  border-top: solid #d9d9d9 1px;
+  border-bottom: solid #333 1px;
+  width: 100%;
+  height: 36px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #f4f4f4;
+  line-height: 36px;
+  font-size: 12px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  -o-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  -ms-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  z-index: 10000;
+}
+.notification_bar.done {
+  background: #efffef;
+  z-index: 10001;
+}
+.notification_bar.fail {
+  background: #ffdfde;
+  z-index: 10001;
+}
+.notification_bar .notification_content {
+  float: left;
+  margin: 0;
+  padding: 0 0 0 30px;
+  line-height: 36px;
+}
+.notification_bar .notification_close {
+  float: right;
+  padding: 0 1.5em 0 .5em;
+  display: block;
+  cursor: pointer;
+  -webkit-text-shadow: 0 0 2px rgba(0,0,0,0.4);
+  -moz-text-shadow: 0 0 2px rgba(0,0,0,0.4);
+  -o-text-shadow: 0 0 2px rgba(0,0,0,0.4);
+  -ms-text-shadow: 0 0 2px rgba(0,0,0,0.4);
+  text-shadow: 0 0 2px rgba(0,0,0,0.4);
+}
+.notification_bar .notification_btns {
+  float: right;
+}
+.notification_bar .notification_btns input {
+  margin-right: .5em;
+  border: solid #696969 1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  background-image: -webkit-linear-gradient(bottom, #b8b8b8 40%, #fefefe 80%);
+  font-size: 11px;
+  -webkit-text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  -moz-text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  -o-text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  -ms-text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0 0 1px rgba(0,0,0,0.4);
+  -o-box-shadow: 0 0 1px rgba(0,0,0,0.4);
+  -ms-box-shadow: 0 0 1px rgba(0,0,0,0.4);
+  box-shadow: 0 0 1px rgba(0,0,0,0.4);
+}

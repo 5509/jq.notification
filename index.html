@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>jq.notification</title>
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/jq.notification.css">
+</head>
+<body>
+
+
+<script src="scripts/lib/jquery-1.7.1.min.js"></script>
+<script src="scripts/jq.notification.js"></script>
+<script>
+
+var $notif = $.notification({
+	content: 'jq.notification text here',
+	yes: 'ok',
+	no: 'cancel'
+});
+
+$notif.bind({
+	notificationYes: function() {
+		alert('OK');
+		$notif.hide();
+	},
+	notificationNo: function() {
+		$notif.hide();
+	}
+});
+
+$notif.show();
+
+</script>
+
+
+</body>
+</html>

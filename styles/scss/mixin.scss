@@ -1,0 +1,75 @@
+// vendor prefixies
+$use:
+  -webkit-, true,
+  -moz-,    true,
+  -o-,      true,
+  -ms-,     true;
+
+// $use_[browser]
+$use_webkit: index($use, 2);
+$use_moz:    index($use, 4);
+$use_o:      index($use, 6);
+$use_ie:     index($use, 8);
+
+@mixin addPrefix($property, $value, $def: false) {
+  $property: unquote($property);
+  $value: unquote($value);
+  @for $i from 1 through length($use)/2 {
+    $n: $i * 2;
+    $flg: nth($use, $n);
+    $prfx: nth($use, $n - 1);
+    @if $def {
+      $_index: index($def, $prfx);
+      @if $_index {
+        $flg: nth($def, $_index + 1);
+      }
+    }
+    @if $flg {
+      #{$prfx + $property}: $value;
+    }
+  }
+  #{$property}: $value;
+}
+
+@mixin clearfix {
+  @if $use_ie {
+    _zoom: 1;
+  }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+  }
+}
+@mixin background-size($value) {
+  $def:
+    -o-, false,
+    -ms-, false;
+  @include addPrefix('background-size', $value, $def);
+}
+@mixin border-radius($value) {
+  @include addPrefix('border-radius', $value);
+}
+@mixin box-shadow($value) {
+  @include addPrefix('box-shadow', $value);
+}
+@mixin text-shadow($value) {
+  @include addPrefix('text-shadow', $value);
+}
+@mixin box-sizing($value) {
+  $def:
+    -o-, false,
+    -ms-, false;
+  @include addPrefix('box-sizing', $value, $def);
+}
+@mixin transition($value) {
+  @include addPrefix('transition', $value);
+}
+@mixin transition-duration($value) {
+  @include addPrefix('transition-duration', $value);
+}
+@mixin transform($value) {
+  @include addPrefix('transform', $value);
+}
+

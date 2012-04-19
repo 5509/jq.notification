@@ -1,0 +1,55 @@
+@import 'mixin';
+
+.notification_bar {
+  border-top: solid #d9d9d9 1px;
+  border-bottom: solid #333 1px;
+  width: 100%;
+  height: 36px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #f4f4f4;
+  line-height: 36px;
+  font-size: 12px;
+  @include box-shadow('0 1px 2px rgba(0,0,0,0.2)');
+  z-index: 10000;
+
+  &.done {
+    background: #efffef;
+    z-index: 10001;
+  }
+  &.fail {
+    background: #ffdfde;
+    z-index: 10001;
+  }
+
+  .notification_content {
+    float: left;
+    margin: 0;
+    padding: 0 0 0 30px;
+    line-height: 36px;
+  }
+
+  .notification_close {
+    float: right;
+    padding: 0 1.5em 0 .5em;
+    display: block;
+    cursor: pointer;
+    @include text-shadow('0 0 2px rgba(0,0,0,0.4)');
+  }
+
+  .notification_btns {
+    float: right;
+
+    input {
+      margin-right: .5em;
+      border: solid #696969 1px;
+      @include border-radius('3px');
+      background-image: -webkit-linear-gradient(bottom, rgb(184,184,184) 40%, rgb(254,254,254) 80%);
+      font-size: 11px;
+      @include text-shadow('1px 1px 2px rgba(255,255,255,0.8)');
+      @include box-shadow('0 0 1px rgba(0,0,0,0.4)');
+    }
+  }
+}
+
